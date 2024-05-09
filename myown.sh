@@ -53,6 +53,7 @@ sleep 4
 
 
 ####  Could just use cfdisk to partition drive
+umount -a
 cfdisk "$IN_DEVICE"    # for non-EFI VM: /boot 512M; / 13G; Swap 2G; Home Remainder
 
 ###  NOTE: Drive partitioning is one of those highly customizable areas where your
