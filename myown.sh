@@ -31,13 +31,13 @@ error(){ echo "Error: $1" && exit 1; }
 ###############################
 
 ### Check of reflector is done
-clear
-echo "Waiting until reflector has finished updating mirrorlist..."
-while true; do
-    pgrep -x reflector &>/dev/null || break
-    echo -n '.'
-    sleep 2
-done
+# clear
+# echo "Waiting until reflector has finished updating mirrorlist..."
+# while true; do
+#     pgrep -x reflector &>/dev/null || break
+#     echo -n '.'
+#     sleep 2
+# done
 
 ### Test internet connection
 clear
