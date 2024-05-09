@@ -7,7 +7,7 @@ Arch Linux after booting the archiso ISO image.
 
 You can download the script to your booted archiso image like this:
 
-`curl -O https://raw.githubusercontent.com/deepbsd/farchi/master/farchi.sh`
+`curl -O https://raw.githubusercontent.com/konulv/farchi/master/myown.sh`
 
 If you open the farchi script and start filling in the
 variables carefully, you'll be ready to install Arch linux!
