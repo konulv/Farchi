@@ -78,8 +78,11 @@ lsblk && echo "Here're your new block devices. (Type any key to continue...)" ; 
 
 ###  Install base system
 clear
+echo "installing ${BASE_SYSTEM[@]}" 
 echo && echo "Press any key to continue to install BASE SYSTEM..."; read empty
-pacstrap /mnt "${BASE_SYSTEM[@]}"
+echo "wait a moment"
+sleep 10
+pacstrap -K /mnt "${BASE_SYSTEM[@]}"
 echo && echo "Base system installed.  Press any key to continue..."; read empty
 
 # GENERATE FSTAB
