@@ -46,10 +46,10 @@ $(ping -c 3 archlinux.org &>/dev/null) || (echo "Not Connected to Network!!!" &&
 echo "Good!  We're connected!!!" && sleep 3
 
 ## Check time and date before installation
-timedatectl set-ntp true
-echo && echo "Date/Time service Status is . . . "
-timedatectl status
-sleep 4
+# timedatectl set-ntp true
+# echo && echo "Date/Time service Status is . . . "
+# timedatectl status
+# sleep 4
 
 
 ####  Could just use cfdisk to partition drive
