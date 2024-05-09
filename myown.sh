@@ -164,5 +164,7 @@ echo "configuring post-intsall script..."
 curl https://raw.githubusercontent.com/deepbsd/farchi/master/myownpost.sh -o /mnt/home/konulv/post-instal.sh
 arch-chroot /mnt chmod +x /home/konulv/post-instal.sh
 
+umount -a
+
 echo "Your system is installed.  Type shutdown -h now to shutdown system and remove bootable media, then restart"
 read empty
