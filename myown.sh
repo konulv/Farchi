@@ -31,13 +31,13 @@ error(){ echo "Error: $1" && exit 1; }
 ###############################
 
 ### Check of reflector is done
-# clear
-# echo "Waiting until reflector has finished updating mirrorlist..."
-# while true; do
-#     pgrep -x reflector &>/dev/null || break
-#     echo -n '.'
-#     sleep 2
-# done
+clear
+echo "Waiting until reflector has finished updating mirrorlist..."
+while true; do
+    pgrep -x reflector &>/dev/null || break
+    echo -n '.'
+    sleep 2
+done
 
 ### Test internet connection
 clear
@@ -131,9 +131,10 @@ clear
 # echo && echo "Enabling dhcpcd, pambase, sshd and NetworkManager services..." && echo
 # arch-chroot /mnt pacman -S git openssh networkmanager dhcpcd man-db man-pages pambase
 echo && echo "Enabling Systemctl services..." && echo
-
+arch-chroot /mnt systemctl enable systemd-resolved
 arch-chroot /mnt systemctl enable iwd.service
-echo "[General]" > /mnt/etc/iwd/main.conf
+mkdir /mnt/etc/iwd
+echo "[General]" > /mnt/etc/iwd/main.conf #no file or dir
 echo "EnableNetworkConfiguration=true" >> /mnt/etc/iwd/main.conf
 
 arch-chroot /mnt systemctl enable NetworkManager
@@ -168,7 +169,6 @@ echo "configuring post-intsall script..."
 curl https://raw.githubusercontent.com/deepbsd/farchi/master/myownpost.sh -o /mnt/home/konulv/post-instal.sh
 arch-chroot /mnt chmod +x /home/konulv/post-instal.sh
 
-umount -a
 
 echo "Your system is installed.  Type shutdown -h now to shutdown system and remove bootable media, then restart"
 read empty
