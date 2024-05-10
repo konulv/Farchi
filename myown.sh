@@ -17,7 +17,7 @@ TIME_ZONE="Europe/London"
 LOCALE="en_GB.UTF-8"
 KEYBOARD="gb"    # change if you need to
 
-BASE_SYSTEM=( base base-devel linux linux-firmware sof-firmware iwd networkmanager grub efibootmgr nano )
+BASE_SYSTEM=( base base-devel linux linux-firmware sof-firmware iwd networkmanager grub efibootmgr nano less man-db )
 #devel_stuff=( git nodejs npm npm-check-updates ruby )
 #printing_stuff=( system-config-printer foomatic-db foomatic-db-engine gutenprint cups cups-pdf cups-filters cups-pk-helper ghostscript gsfonts )
 #multimedia_stuff=( brasero sox eog shotwell imagemagick sox cmus mpg123 alsa-utils cheese )
